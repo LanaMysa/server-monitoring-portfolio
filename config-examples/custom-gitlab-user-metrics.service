@@ -1,0 +1,10 @@
+[Unit]
+Description=Collect custom GitLab user metrics
+After=network-online.target gitlab-runsvdir.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/custom-gitlab-user-metrics
+User=root
+TimeoutStartSec=5min
+Nice=10

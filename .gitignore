@@ -1,0 +1,33 @@
+# Umgebungsvariablen und Zugangsdaten
+.env
+.env.*
+credentials*
+secrets/
+private/
+config-private/
+
+# Schlüssel und Zertifikatscontainer
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+
+# Dateien mit möglichen Geheimnissen
+*token*
+*password*
+*passwort*
+*secret*
+
+# Sicherungskopien
+*.bak
+*.backup
+*.old
+
+# Editor- und Systemdateien
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini

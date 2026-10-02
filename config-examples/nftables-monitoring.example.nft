@@ -1,0 +1,14 @@
+table inet monitoring {
+    chain input {
+        type filter hook input priority filter; policy accept;
+
+        # Lokaler Zugriff
+        iifname "lo" tcp dport 9100 accept
+
+        # Zugriff vom zentralen Prometheus-Server
+        ip saddr <PROMETHEUS-IP> tcp dport 9100 accept
+
+        # Alle anderen Zugriffe auf den Node Exporter blockieren
+        tcp dport 9100 drop
+    }
+}

@@ -1,0 +1,26 @@
+#!/bin/bash
+set -euo pipefail
+
+OUTPUT_DIR="/var/opt/gitlab/node-exporter/textfile_collector"
+OUTPUT_FILE="${OUTPUT_DIR}/custom_gitlab_users.prom"
+TEMP_FILE="$(mktemp "${OUTPUT_DIR}/.custom_gitlab_users.prom.XXXXXX")"
+
+trap 'rm -f "$TEMP_FILE"' EXIT
+
+/usr/bin/gitlab-rails runner '
+  human = User.where(user_type: "human")
+
+  puts "# HELP custom_gitlab_human_users_total Total number of human GitLab accounts."
+  puts "# TYPE custom_gitlab_human_users_total gauge"
+  puts "custom_gitlab_human_users_total #{human.count}"
+
+  puts "# HELP custom_gitlab_users_inactive_2_years Human users whose last login was more than two years ago."
+  puts "# TYPE custom_gitlab_users_inactive_2_years gauge"
+  puts "custom_gitlab_users_inactive_2_years #{human.where.not(current_sign_in_at: nil).where("current_sign_in_at < ?", 2.years.ago).count}"
+' > "$TEMP_FILE"
+
+chmod 0644 "$TEMP_FILE"
+chown gitlab-prometheus:root "$TEMP_FILE"
+mv -f "$TEMP_FILE" "$OUTPUT_FILE"
+
+trap - EXIT

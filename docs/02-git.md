@@ -116,6 +116,13 @@ active
 enabled
 ```
 
+### Screenshot der Firewall-Regel
+
+Der Screenshot zeigt, dass der Zugriff auf Port `9100` nur für den Monitoring-Server erlaubt ist. Andere Verbindungen zu diesem Port werden blockiert.
+
+![Firewall-Regel für den Node Exporter](../screenshots/terminal/git-node-exporter-firewall.png)
+
+
 ## 6. Node Exporter testen
 
 Der lokale Zugriff wurde so geprüft:
@@ -136,6 +143,13 @@ Wenn Metriken angezeigt werden, funktioniert die Verbindung.
 
 Die Meldung `curl: (23) Failed writing body` nach `head` ist in diesem Fall kein Fehler des Node Exporters. `head` beendet die Ausgabe nach den ersten Zeilen.
 
+### Screenshot der Node-Exporter-Prüfung
+
+Der Screenshot zeigt, dass der Node Exporter auf Port `9100` erreichbar ist und Systemmetriken bereitstellt.
+
+![Prüfung des Node Exporters auf Port 9100](../screenshots/terminal/git-node-exporter-firewall_001.png)
+
+
 ## 7. Prometheus-Job einrichten
 
 Auf `git-dev` wurde ein neuer Prometheus-Job eingerichtet:
@@ -154,6 +168,13 @@ up{job="git-node"}
 ```
 
 Das Ergebnis `1` bedeutet, dass Prometheus den Node Exporter erreicht.
+
+### Screenshot der Prometheus-Prüfung
+
+Der Screenshot zeigt, dass Prometheus die Metriken der VM `git` erfolgreich abruft. Der Wert `up = 1` bedeutet, dass das Ziel erreichbar ist.
+
+![Erfolgreiche Prometheus-Prüfung der VM git](../screenshots/terminal/git-prometheus-monitoring-check.png)
+
 
 ## 8. HTTPS und TLS prüfen
 
@@ -181,6 +202,15 @@ Das Ergebnis war erfolgreich:
 probe_success = 1
 probe_http_ssl = 1
 ```
+
+### Screenshots der HTTPS- und TLS-Überwachung
+
+Die GitLab-Weboberfläche ist über HTTPS erreichbar. Zusätzlich wird die verbleibende Laufzeit des TLS-Zertifikats angezeigt.
+
+![Erreichbarkeit der GitLab-Weboberfläche über HTTPS](<../screenshots/dashboards/Board_git_GitLab_Weboberfläche über HTTPS erreichbar_001.png>)
+
+![Verbleibende Laufzeit des TLS-Zertifikats](<../screenshots/dashboards/Board_git_Restaufzeit des TLSZertifikats_001.png>)
+
 
 ## 9. GitLab-Benutzermetriken
 
@@ -222,6 +252,13 @@ systemctl list-timers --all | grep 'custom-gitlab-user-metrics'
 
 Der Timer aktualisiert die Werte alle fünf Minuten.
 
+### Screenshot des systemd-Timers
+
+Der Screenshot zeigt, dass der Timer für die automatische Aktualisierung der GitLab-Benutzermetriken aktiv ist.
+
+![Aktiver Timer für die GitLab-Benutzermetriken](../screenshots/terminal/git-user-metrics-timer.png)
+
+
 ## 11. Grafana-Dashboard
 
 Das Dashboard zeigt:
@@ -238,6 +275,18 @@ Das Dashboard zeigt:
 - Benutzer insgesamt
 - seit mehr als zwei Jahren inaktive Benutzerkonten
 
+### Screenshots des Grafana-Dashboards
+
+Die folgenden Screenshots zeigen die wichtigsten Systemmetriken der VM `git`.
+
+![Systemübersicht der VM git – Teil 1](../screenshots/dashboards/git-system-monitoring-dashboard_001.png)
+
+![Systemübersicht der VM git – Teil 2](../screenshots/dashboards/git-system-monitoring-dashboard_002.png)
+
+![Systemübersicht der VM git – Teil 3](../screenshots/dashboards/git-system-monitoring-dashboard_003.png)
+
+
+
 ## 12. Alert-Regeln
 
 Für `git` wurden unter anderem folgende Alert-Regeln verwendet:
@@ -251,6 +300,17 @@ Für `git` wurden unter anderem folgende Alert-Regeln verwendet:
 - TLS-Zertifikat läuft bald ab
 - PostgreSQL nicht erreichbar
 - PostgreSQL-Deadlock erkannt
+
+### Screenshots der Alert-Regeln
+
+Die folgenden Screenshots zeigen die eingerichteten Warnungen für die VM `git`.
+
+![Alert für das TLS-Zertifikat](../screenshots/alerts/Alert_TLSZertifikat_git_001.png)
+
+![Alert bei Nichterreichbarkeit der VM](<../screenshots/alerts/Alert_VM_Verfügbarkeit_git_Server nicht erreichbar_001.png>)
+
+![Alert bei Nichterreichbarkeit der GitLab-Weboberfläche](<../screenshots/alerts/Alert_GitLabWeboberfläche nicht erreichbar_001.png>)
+
 
 ## Ergebnis
 

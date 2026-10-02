@@ -285,6 +285,41 @@ Die folgenden Screenshots zeigen die wichtigsten Systemmetriken der VM `git`.
 
 ![Systemübersicht der VM git – Teil 3](../screenshots/dashboards/git-system-monitoring-dashboard_003.png)
 
+### Einzelne Dashboard-Panels
+
+Die folgenden Screenshots zeigen die einzelnen Messwerte der VM `git` genauer.
+
+#### Serverstatus
+
+![Serverstatus der VM git](../screenshots/dashboards/Board_git_Serverstatus_001.png)
+
+#### CPU-Auslastung
+
+![CPU-Auslastung der VM git](../screenshots/dashboards/Board_git_CPU_Auslastung_001.png)
+
+#### RAM-Auslastung
+
+![RAM-Auslastung der VM git](../screenshots/dashboards/Board_git_RAM_Auslastung_001.png)
+
+#### Festplattenbelegung
+
+![Festplattenbelegung der VM git](../screenshots/dashboards/Board_git_Festplatebelegung_001.png)
+
+#### Festplattenaktivität
+
+![Festplattenaktivität der VM git](<../screenshots/dashboards/Board_git_Festplattenaktivität_001.png>)
+
+#### Netzwerkverkehr
+
+![Netzwerkverkehr der VM git](../screenshots/dashboards/Board_git_Nertwerkverkehr_001.png)
+
+#### Load Average
+
+![Load Average der VM git](../screenshots/dashboards/Board_git_LoadAverage_001.png)
+
+#### Inaktive Benutzerkonten
+
+![Inaktive GitLab-Benutzerkonten](../screenshots/dashboards/Board_git_InaktiveBenutzerkonten_001.png)
 
 
 ## 12. Alert-Regeln

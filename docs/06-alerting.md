@@ -85,6 +85,13 @@ Verwendete Schweregrade:
 
 Die Labels helfen bei der Zuordnung und Weiterleitung der Benachrichtigungen.
 
+### Screenshot der verwendeten Labels
+
+Labels ordnen eine Warnung einem Server, einem Dienst und einer Priorität zu. Dadurch können die Alert-Regeln und Benachrichtigungen besser gefiltert werden.
+
+![Verwendete Labels der Alert-Regeln](../screenshots/alerts/Labels_001.png)
+
+
 ## 5. Verfügbarkeit einer VM
 
 Beispiel für eine Prometheus-Abfrage:
@@ -100,6 +107,13 @@ IS BELOW 1
 ```
 
 Wenn der Wert `0` ist, kann Prometheus den Node Exporter nicht erreichen.
+
+### Dashboard für Ressourcenauslastung und Verfügbarkeit
+
+Diese Übersicht zeigt die Regeln für die Erreichbarkeit der virtuellen Maschinen sowie für CPU, RAM und Festplattenbelegung.
+
+![Alert-Regeln für Ressourcenauslastung und Verfügbarkeit](<../screenshots/alerts/DashboardsRessourcenauslastung_und_Verfügbarkeit_001.png>)
+
 
 ## 6. Webseite überwachen
 
@@ -143,6 +157,13 @@ Alert-Bedingung:
 IS ABOVE 0
 ```
 
+### Dashboard für den Dienststatus
+
+Diese Übersicht zeigt die Alert-Regeln für wichtige Dienste und Weboberflächen der überwachten Systeme.
+
+![Alert-Regeln für den Dienststatus](../screenshots/alerts/DashboardsDienststatus_001.png)
+
+
 ## 8. TLS-Zertifikate überwachen
 
 Die Restlaufzeit eines Zertifikats kann so berechnet werden:
@@ -154,6 +175,13 @@ Die Restlaufzeit eines Zertifikats kann so berechnet werden:
 Das Ergebnis zeigt die verbleibenden Tage.
 
 Bei einer kurzen Restlaufzeit wird eine Warnung oder ein kritischer Alert ausgelöst.
+
+### Übersicht der TLS-Benachrichtigungen
+
+Die Übersicht zeigt die eingerichteten Warnungen für die verbleibende Laufzeit der TLS-Zertifikate.
+
+![Gesamtliste der TLS-Benachrichtigungen](<../screenshots/alerts/Gesamtliste der BenachrichtigungenTLS_001.png>)
+
 
 ## 9. Texte der Benachrichtigungen
 
@@ -181,6 +209,13 @@ Server-Monitoring – Telegram und E-Mail
 ```
 
 Passwörter und Tokens des Contact Points werden nicht in der Dokumentation oder im Git-Repository gespeichert.
+
+### Gesamtliste der Benachrichtigungen
+
+Diese Übersicht zeigt die eingerichteten Benachrichtigungen für Server, Dienste, Weboberflächen und Systemressourcen.
+
+![Gesamtliste der eingerichteten Benachrichtigungen](<../screenshots/alerts/Gesamtliste der Benachrichtigungen_001.png>)
+
 
 ## 11. Prüfung der Regeln
 

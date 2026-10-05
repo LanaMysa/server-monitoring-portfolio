@@ -160,6 +160,23 @@ Für LEIHS wurden folgende Alert-Regeln eingerichtet:
 - Festplatte fast voll
 - TLS-Zertifikat läuft bald ab
 
+### Screenshots der LEIHS-Alert-Regeln
+
+Die folgenden Screenshots zeigen die wichtigsten Warnungen für die VM `leihs`.
+
+#### LEIHS-Server nicht erreichbar
+
+![Alert bei Nichterreichbarkeit des LEIHS-Servers](<../screenshots/alerts/Alert_VM_Verfügbarkeit_LEIHS_Server nicht erreichbar_001.png>)
+
+#### Wichtiger Dienst ausgefallen
+
+![Alert bei Ausfall eines wichtigen LEIHS-Dienstes](../screenshots/alerts/Alert_Dienststatus_LEIHS_WichtigerDienstAusgefallen_001.png)
+
+#### LEIHS-Weboberfläche nicht erreichbar
+
+![Alert bei Nichterreichbarkeit der LEIHS-Weboberfläche](<../screenshots/alerts/Alert_Dienststatus_LEIHS_Weboberfläche nicht erreichbar_001.png>)
+
+
 ## Ergebnis
 
 Die VM `leihs` wird zentral von Prometheus auf `git-dev` überwacht. Grafana zeigt die Systemwerte und den Zustand der LEIHS-Weboberfläche an. Bei wichtigen Problemen kann eine Benachrichtigung gesendet werden.

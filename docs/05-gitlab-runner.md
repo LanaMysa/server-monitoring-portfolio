@@ -68,6 +68,21 @@ curl --noproxy '*' -fsS --connect-timeout 5 \
 
 Der Zugriff auf Port `9100` soll möglichst nur für den zentralen Monitoring-Server erlaubt sein.
 
+### Einzelne Alert-Regeln für Systemressourcen
+
+#### CPU-Auslastung hoch
+
+![Alert bei hoher CPU-Auslastung](<../screenshots/alerts/Alert_RA_Server-Monitoring_CPUAuslastung hoch_001.png>)
+
+#### RAM-Auslastung hoch
+
+![Alert bei hoher RAM-Auslastung](<../screenshots/alerts/Alert_RA_ServerMonitoring_RAMAuslastung hoch_001.png>)
+
+#### Festplatte fast voll
+
+![Alert bei fast voller Festplatte](<../screenshots/alerts/Alert_RA_ServerMonitoring_Festplatte fast voll_001.png>)
+
+
 ## 6. Prometheus-Job einrichten
 
 Auf `git-dev` wurde ein Prometheus-Job für den GitLab Runner eingerichtet:
@@ -134,6 +149,13 @@ Das Dashboard für den GitLab Runner zeigt:
 - Festplattenbelegung
 - Netzwerkverkehr
 
+### Screenshot des GitLab-Runner-Dashboards
+
+Das Dashboard zeigt den Zustand der VM, die Systemressourcen und die überwachten Dienste des GitLab Runners.
+
+![Dashboard zur Überwachung des GitLab Runners](<../screenshots/dashboards/DB_GitLab Runner_Überwachung.png>)
+
+
 ## 10. Alert-Regeln
 
 Für den GitLab Runner wurden folgende Alert-Regeln eingerichtet:
@@ -143,6 +165,19 @@ Für den GitLab Runner wurden folgende Alert-Regeln eingerichtet:
 - CPU-Auslastung hoch
 - RAM-Auslastung hoch
 - Festplatte fast voll
+
+### Screenshots der GitLab-Runner-Alert-Regeln
+
+Die folgenden Screenshots zeigen die wichtigsten Warnungen für den GitLab Runner.
+
+#### GitLab-Runner-Server nicht erreichbar
+
+![Alert bei Nichterreichbarkeit des GitLab-Runner-Servers](<../screenshots/alerts/Alert_VM_Verfügbarkeit_GitLabRunner_Server nicht erreichbar_001.png>)
+
+#### Wichtiger Dienst ausgefallen
+
+![Alert bei Ausfall eines wichtigen GitLab-Runner-Dienstes](../screenshots/alerts/Alert_Dienststatus_GitLabRunner_WichtigerDienstausgefallen_001.png)
+
 
 ## Ergebnis
 

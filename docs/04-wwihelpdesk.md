@@ -168,6 +168,23 @@ Für WWI Helpdesk wurden folgende Alert-Regeln eingerichtet:
 - Festplatte fast voll
 - TLS-Zertifikat läuft bald ab
 
+### Screenshots der WWI-Helpdesk-Alert-Regeln
+
+Die folgenden Screenshots zeigen die wichtigsten Warnungen für die VM `wwihelpdesk`.
+
+#### WWI-Helpdesk-Server nicht erreichbar
+
+![Alert bei Nichterreichbarkeit des WWI-Helpdesk-Servers](<../screenshots/alerts/Alert_VM_Verfügbarkeit_WWIHelpdesk_Server nicht erreichbar_001.png>)
+
+#### Wichtiger Dienst ausgefallen
+
+![Alert bei Ausfall eines wichtigen WWI-Helpdesk-Dienstes](../screenshots/alerts/Alert_Dienststatus_WWI_Helpdesk_WichtigerDienstAusgefallen_001.png)
+
+#### OTRS-Weboberfläche nicht erreichbar
+
+![Alert bei Nichterreichbarkeit der OTRS-Weboberfläche](<../screenshots/alerts/Alert_wwihelpdesk_OTRS_Weboberfläche nicht erreichbar_001.png>)
+
+
 ## Ergebnis
 
 Die VM `wwihelpdesk` wird zentral von Prometheus auf `git-dev` überwacht. Grafana zeigt die Systemwerte, den Status der OTRS-Weboberfläche und die Restlaufzeit des TLS-Zertifikats an.
